@@ -45,7 +45,7 @@ def image_upload_view(request):
             form.save()
             # Get the current instance object to display in the template
             img_obj = form.instance
-            return render(request, 'file_upload.html', {'form': form, 'img_obj': img_obj})
+            return render(request, 'post_deteail.html', {'form': form, 'img_obj': img_obj})
     else:
         form = ImageForm()
-        return render(request, 'file_upload.html', {'form': form})
+        return render(request, 'post_detail.html', {'form': form})
