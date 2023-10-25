@@ -12,6 +12,7 @@
     --off-white: #e3e7eb;
     --white: #fff;
     --orange: #f00000;
+    --purple: #5333e1;
 
     /** Utils */
 
@@ -33,7 +34,7 @@ a.nav-link {
 img.logo {
     width: 160px;
     height: 100px;
-    background-color: var(--blue);
+    background-color: var(--purple);
 }
 
 html,
@@ -93,9 +94,29 @@ form {
 }
 
 .masthead {
-    background: #3398e1;
+    background: #5333e1;
     height: auto;
     padding-bottom: 15px;
     box-shadow: 0 16px 48px #e3e7eb;
     padding-top: 10px;
 }
+
+
+.head_text {
+    color: white;
+}
+
+.card {
+    box-shadow: 0 16px 48px #e3e7eb;
+}
+
+a.btn.btn-primary {
+    color: #fff;
+    background-color: hsl(50, 33%, 25%);
+    border-color: black;
+}
+
+a.btn.btn-primary:hover {
+    color: #fff;
+    background-color: hsla(50, 33%, 25%, 0.75);
+    border-color: orangered;
