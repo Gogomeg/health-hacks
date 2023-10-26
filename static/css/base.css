@@ -72,14 +72,10 @@ footer {
 /** form */
 
 form {
-    width: 60%;
+    width: 40%;
     margin-top: 40px;
-    margin-left: 30px;
+    margin-left: 200px;
     background-color: var(--off-white);
-}
-
-.form-control {
-    width: 35%;
 }
 
 
@@ -132,4 +128,9 @@ a.btn.btn-primary:hover {
     margin: 3% auto;
     box-shadow: var(--small-box-shadow);
     border-radius: 5px;
+}
+
+.form-control {
+    width: 30%;
+    text-align: right;
 }

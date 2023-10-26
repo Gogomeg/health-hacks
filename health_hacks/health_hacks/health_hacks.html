@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block title %}Recipes{% endblock %} {% block
+content %}
+<h1 class="text-center p-2 d-block">Latest Health Hacks</h1>
+<div class="container d-flex flex-row flex-wrap justify-content-center">
+  {% for health_hack in health_hacks %}
+  <a
+    href="{% url 'post_detail' health_hack.id %}"
+    class="health-hacks"
+    aria-label="Click to view {{health_hack.title}}"
+  >
+    <div class="card m-3" style="width: 18rem">
+      <img
+        src="{{health_hack.image.url}}"
+        class="card-img-top"
+        alt="{{health_hack.image_alt}}"
+      />
+      <div class="card-body">
+        <h2 class="card-title">{{healt_hack.title}}</h2>
+        <p class="card-text">{{health_hack.description|truncatechars:100}}</p>
+      </div>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endblock %}
