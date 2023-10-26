@@ -120,3 +120,16 @@ a.btn.btn-primary:hover {
     color: #fff;
     background-color: hsla(50, 33%, 25%, 0.75);
     border-color: orangered;
+}
+
+.active {
+    border-bottom: 2.25px solid var(--purple);
+    font-weight: 600;
+}
+
+.form {
+    width: 100%;
+    margin: 3% auto;
+    box-shadow: var(--small-box-shadow);
+    border-radius: 5px;
+}
