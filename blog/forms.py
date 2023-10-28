@@ -50,7 +50,7 @@ class HackForm(forms.ModelForm):
             "title": "Health Hack Title",
             "description": "Description",
             "content": "Health Hack content",
-            "image": "Helath hack Image",
+            "image": "Health hack Image",
             "image_alt": "Describe Image",
-            "hack_type": "Hack Type",
+            "hack_type": "Health Hack Type",
         }
