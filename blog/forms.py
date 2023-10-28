@@ -26,7 +26,7 @@ class ImageForm(forms.ModelForm):
         fields = ('title', 'image')
 
 
-class HacksForm(forms.ModelForm):
+class HackForm(forms.ModelForm):
     """Form to create a health hack"""
 
     class Meta:

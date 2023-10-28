@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
     # App
     'blog',
+    'health_hacks',
 
     # Other
     'crispy_forms',

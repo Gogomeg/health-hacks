@@ -3,8 +3,8 @@ from django.views.generic import (
     DetailView, DeleteView,
     UpdateView
 )
-from .forms import RecipeForm
-from .models import Recipe
+from .forms import HackForm
+from .models import Health_hacks
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
 from django.contrib.auth.mixins import (
@@ -68,7 +68,7 @@ class Health_hacks(ListView):
     """View all health hacks"""
 
     template_name = "health_hacks/health_hacks.html"
-    model = Recipe
+    model = Health_hacks
     context_object_name = "health_hacks"
 
     def get_queryset(self, **kwargs):
@@ -77,8 +77,8 @@ class Health_hacks(ListView):
             health_hacks = self.model.objects.filter(
                 Q(title__icontains=query) |
                 Q(description__icontains=query) |
-                Q(instructions__icontains=query) |
-                Q(cuisine_types__icontains=query)
+                Q(content__icontains=query) |
+                Q(hack_types__icontains=query)
             )
         else:
             health_hacks = self.model.objects.all()
@@ -89,7 +89,7 @@ class HackDetail(DetailView):
     """View a single health hack"""
 
     template_name = "health_hacks/post_detail.html"
-    model = Recipe
+    model = Health_hacks
     context_object_name = "healt_hack"
 
 
@@ -97,8 +97,8 @@ class AddHack(LoginRequiredMixin, CreateView):
     """Add health hacks view"""
 
     template_name = "health_hacks/add_health_hack.html"
-    model = Recipe
-    form_class = RecipeForm
+    model = Health_hacks
+    form_class = HackForm
     success_url = "/health_hacks/"
 
     def form_valid(self, form):
@@ -109,8 +109,8 @@ class AddHack(LoginRequiredMixin, CreateView):
 class EditHack(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """Edit a health hack"""
     template_name = 'health_hacks/edit_health_hack.html'
-    model = Recipe
-    form_class = RecipeForm
+    model = Health_hacks
+    form_class = HackForm
     success_url = '/healt_hacks/'
 
     def test_func(self):
@@ -119,7 +119,7 @@ class EditHack(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 class DeleteHack(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """Delete a health hack"""
-    model = Recipe
+    model = Health_hacks
     success_url = '/health_hacks/'
 
     def test_func(self):
