@@ -67,7 +67,7 @@ HACK_TYPES = (('Supplements', 'suplements'), ('Research', 'research'), ('Longevi
               ('Sun therapy', 'sun therapy'), ('Diet', 'diet'), ('Exercise', 'exercise'))
 
 
-class Health_hacks(models.Model):
+class HealthHack(models.Model):
     """
     A model to create and manage health hacks
     """

@@ -134,3 +134,19 @@ a.btn.btn-primary:hover {
     width: 30%;
     text-align: right;
 }
+
+/* Health hacks */
+
+.card {
+    height: 90%;
+    margin-top: 1rem;
+}
+
+.health_hacks {
+    text-decoration: none;
+    color: var(--black)
+}
+
+.healt_hacks:hover {
+    cursor: pointer;
+}

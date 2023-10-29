@@ -3,7 +3,7 @@ from django import forms
 from django_summernote.widgets import SummernoteWidget, SummernoteInplaceWidget
 from .models import Image
 from djrichtextfield.widgets import RichTextWidget
-from .models import Health_hacks
+from .models import HealthHack
 
 
 class CommentForm(forms.ModelForm):
@@ -30,7 +30,7 @@ class HackForm(forms.ModelForm):
     """Form to create a health hack"""
 
     class Meta:
-        model = Health_hacks
+        model = HealthHack
         fields = [
             "title",
             "description",

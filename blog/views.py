@@ -4,7 +4,7 @@ from django.views.generic import (
     UpdateView
 )
 from .forms import HackForm
-from .models import Health_hacks
+from .models import HealthHack
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import Q
 from django.contrib.auth.mixins import (
@@ -15,7 +15,6 @@ from django.views import generic
 from .models import Post
 from .forms import CommentForm
 from .forms import ImageForm
-
 
 
 # Render a list with the objects of the specified model
@@ -64,11 +63,11 @@ def image_upload_view(request):
         return render(request, 'post_detail.html', {'form': form})
 
 
-class Health_hacks(ListView):
+class HealthHack(ListView):
     """View all health hacks"""
 
     template_name = "health_hacks/health_hacks.html"
-    model = Health_hacks
+    model = HealthHack
     context_object_name = "health_hacks"
 
     def get_queryset(self, **kwargs):
@@ -89,15 +88,15 @@ class HackDetail(DetailView):
     """View a single health hack"""
 
     template_name = "health_hacks/post_detail.html"
-    model = Health_hacks
-    context_object_name = "healt_hack"
+    model = HealthHack
+    context_object_name = "healt_hacks"
 
 
 class AddHack(LoginRequiredMixin, CreateView):
     """Add health hacks view"""
 
     template_name = "health_hacks/add_health_hack.html"
-    model = Health_hacks
+    model = HealthHack
     form_class = HackForm
     success_url = "/health_hacks/"
 
@@ -109,7 +108,7 @@ class AddHack(LoginRequiredMixin, CreateView):
 class EditHack(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     """Edit a health hack"""
     template_name = 'health_hacks/edit_health_hack.html'
-    model = Health_hacks
+    model = HealthHack
     form_class = HackForm
     success_url = '/healt_hacks/'
 
@@ -119,7 +118,7 @@ class EditHack(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
 
 class DeleteHack(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     """Delete a health hack"""
-    model = Health_hacks
+    model = HealthHack
     success_url = '/health_hacks/'
 
     def test_func(self):

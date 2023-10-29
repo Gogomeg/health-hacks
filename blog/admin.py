@@ -1,7 +1,6 @@
 from django.contrib import admin
-from .models import Post, Comment
+from .models import Post, Comment, HealthHack
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Health_hacks
 
 # Register your models here.
 
@@ -26,7 +25,7 @@ class CommentAdmin(admin.ModelAdmin):
         queryset.update(active=True)
 
 
-@admin.register(Health_hacks)
+@admin.register(HealthHack)
 class HealthhacksAdmin(admin.ModelAdmin):
     list_display = (
         'title',
