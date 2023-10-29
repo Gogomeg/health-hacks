@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post, Comment, HealthHack
+from .models import Post, Comment
 from django_summernote.admin import SummernoteModelAdmin
 
 # Register your models here.
@@ -24,13 +24,3 @@ class CommentAdmin(admin.ModelAdmin):
     def approve_comments(self, request, queryset):
         queryset.update(active=True)
 
-
-@admin.register(HealthHack)
-class HealthhacksAdmin(admin.ModelAdmin):
-    list_display = (
-        'title',
-        'hack_type',
-        'content',
-        'image',
-    )
-    list_filter = ('hack_type',)
