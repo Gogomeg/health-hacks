@@ -5,7 +5,7 @@ from .views import AddHack, HealthHack, HackDetail, DeleteHack, EditHack
 
 # Map URL for the views
 urlpatterns = [
-    path('', views.PostList.as_view(), name='home'),
+    path('<slug:slug>/', views.PostList.as_view(), name='home'),
     path('<slug:slug>/', views.post_detail, name='post_detail'),
     path('upload/', views.image_upload_view),
     path('add/', AddHack.as_view(), name='add_health_hack'),
