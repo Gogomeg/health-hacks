@@ -1,7 +1,6 @@
 from django.views.generic import ListView
 from health_hacks.models import HealthHack
 
-
 class Index(ListView):
     template_name = 'blog/index.html'
     model = HealthHack

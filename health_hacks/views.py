@@ -15,6 +15,7 @@ from django.views import generic
 from .models import Post
 from .forms import CommentForm
 from django.views.generic import ListView
+from health_hacks.models import HealthHack
 
 
 class HealthHack(ListView):
