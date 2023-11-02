@@ -1,6 +1,6 @@
 from . import views
 from django.urls import path, include
-from .views import AddHack, HealthHack, HackDetail, DeleteHack, EditHack
+from .views import AddHack, HealthHack, HackDetail, DeleteHack, EditHack, post_detail
 
 
 # Map URL for the views
@@ -10,4 +10,5 @@ urlpatterns = [
     path('<slug:pk>/', HackDetail.as_view(), name='post_detail'),
     path('delete/<slug:pk>/', DeleteHack.as_view(), name='delete_health_hack'),
     path('edit/<slug:pk>/', EditHack.as_view(), name='edit_health_hack'),
+    path("<slug:pk>/", post_detail.as_view(), name="post_detail"),
 ]
