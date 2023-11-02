@@ -18,7 +18,7 @@ from django.views.generic import ListView
 from health_hacks.models import HealthHack
 
 
-class HealthHack(ListView):
+class HealthHackView(ListView):
     """View all health hacks"""
 
     template_name = "health_hacks/health_hacks.html"
